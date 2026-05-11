@@ -123,7 +123,19 @@
     }
     .effect {
       font-size: 22px;
-      font-weight: 650;
+      font-weight: 500;
+      line-height: 1.65;
+    }
+    .effect::before {
+      content: "대표 증상";
+      display: inline-block;
+      margin: 0 10px 8px 0;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: #eaf3f1;
+      color: #073f39;
+      font-size: 18px;
+      font-weight: 900;
     }
     .tip {
       color: var(--muted);
@@ -131,22 +143,49 @@
       margin-top: 5px;
     }
     .safety {
-      margin-top: 10px;
+      margin-top: 14px;
       display: grid;
-      gap: 6px;
-      font-size: 19px;
-      font-weight: 600;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 500;
     }
     .safety div {
-      border-left: 5px solid var(--line);
-      padding: 6px 8px;
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 12px;
+      align-items: start;
+      border: 1px solid var(--line);
+      border-left: 8px solid var(--line);
+      padding: 12px 14px;
       background: #fff;
-      border-radius: 4px;
+      border-radius: 8px;
     }
-    .safety b { margin-right: 6px; }
-    .safety .use { border-left-color: #0b6f63; }
-    .safety .side { border-left-color: #b25b00; }
-    .safety .care { border-left-color: #9b1c31; }
+    .safety b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .safety .use {
+      border-left-color: #0b6f63;
+      background: #f2fbf9;
+    }
+    .safety .use b { background: #0b6f63; }
+    .safety .side {
+      border-left-color: #b25b00;
+      background: #fff8ea;
+    }
+    .safety .side b { background: #b25b00; }
+    .safety .care {
+      border-left-color: #9b1c31;
+      background: #fff2f4;
+    }
+    .safety .care b { background: #9b1c31; }
     .emergency {
       border: 2px solid #e2b6bf;
       background: #fff2f4;
@@ -257,6 +296,11 @@
       td:last-child { border-bottom: 0; }
       .code, .photo, .name { width: 100%; text-align: left; }
       .photo img, .no-photo { width: 100%; height: auto; min-height: 92px; }
+      .effect { font-size: 20px; }
+      .effect::before { font-size: 17px; }
+      .safety { font-size: 19px; }
+      .safety div { grid-template-columns: 76px 1fr; padding: 11px 12px; }
+      .safety b { font-size: 17px; }
     }
     @media print {
       .page { max-width: none; padding: 12mm; }
@@ -268,8 +312,9 @@
       .code { font-size: 20px; }
       .name { font-size: 19px; }
       .effect { font-size: 16px; }
-      .safety { font-size: 12px; gap: 3px; }
-      .safety div { padding: 3px 5px; border-left-width: 3px; }
+      .safety { font-size: 13px; gap: 4px; }
+      .safety div { grid-template-columns: 48px 1fr; padding: 4px 5px; border-left-width: 4px; }
+      .safety b { min-height: 22px; font-size: 11px; border-radius: 4px; }
       .tip { font-size: 12px; }
       .photo img, .no-photo { width: 112px; max-height: 76px; }
       th, td { padding: 6px; }
